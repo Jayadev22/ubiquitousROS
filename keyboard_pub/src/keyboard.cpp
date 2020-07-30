@@ -1,3 +1,11 @@
+/////////////////////////////////////////////////////////////////////////////////
+// This is a simple cpp script to publish the keyboard key that is pressed on the
+// topic /key
+// 
+// Date created: 31.05.2019
+// Author: Jayadev Madyal
+/////////////////////////////////////////////////////////////////////////////////
+
 #include <termios.h>
 // #include <iostream>     // belongs to blocking input mode
 
@@ -25,7 +33,7 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "keyboard");
     ros::NodeHandle n;
 
-    ros::Publisher pub = n.advertise<std_msgs::Int32>("Key", 1000);
+    ros::Publisher pub = n.advertise<std_msgs::Int32>("/key", 1000);
     ros::Rate loop_rate(10);
 
 
